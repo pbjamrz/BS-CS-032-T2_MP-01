@@ -48,9 +48,8 @@ void polyread(Polynomial* p, int id, int n) {
         
         Node* b = p->head;
         Node* a = p->head->next;
-        
 
-        //Ensures linked list is in canonical form
+        // Ensures linked list is in canonical form
         while (a != p->head && (a->exp_x > v->exp_x || 
                                     (a->exp_x == v->exp_x && a->exp_y > v->exp_y) || 
                                     (a->exp_x == v->exp_x && a->exp_y == v->exp_y && a->exp_z > v->exp_z))) {
@@ -61,7 +60,6 @@ void polyread(Polynomial* p, int id, int n) {
         b->next = v;
         v->next = a;
     }
-
 }
 
 void polyadd(Polynomial *p, Polynomial *q, int id) {
@@ -108,7 +106,7 @@ void polyadd(Polynomial *p, Polynomial *q, int id) {
 }
 
 
-//Test print
+// Test print
 void printPolynomial(Polynomial *P) {
     Node *curr = P->head->next;
     printf("Polynomial ID: %d\n", P->id_num);
@@ -146,4 +144,3 @@ int main() {
     
     return 0;
 }
-
